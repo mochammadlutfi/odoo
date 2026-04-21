@@ -1,0 +1,171 @@
+.env-ribbon {
+    position: fixed;
+    z-index: 9999;
+    color: #fff;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    pointer-events: none; // float above UI without blocking clicks
+    white-space: nowrap;
+    user-select: none;
+
+    .ribbon-text {
+        flex: 1;
+    }
+
+    .ribbon-dismiss {
+        pointer-events: auto;
+        background: transparent;
+        border: none;
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 16px;
+        line-height: 1;
+        cursor: pointer;
+        padding: 0 2px;
+        margin-left: 4px;
+
+        &:hover {
+            color: #fff;
+        }
+    }
+}
+
+// ─── BAR style — kotak lurus menempel di tepi ───────────────────────────────
+.env-ribbon-style-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 14px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+
+    &.env-ribbon-pos-top_right {
+        top: 0;
+        right: 0;
+        border-radius: 0 0 0 8px;
+    }
+
+    &.env-ribbon-pos-top_left {
+        top: 0;
+        left: 0;
+        border-radius: 0 0 8px 0;
+    }
+
+    &.env-ribbon-pos-bottom_right {
+        bottom: 0;
+        right: 0;
+        border-radius: 8px 0 0 0;
+    }
+
+    &.env-ribbon-pos-bottom_left {
+        bottom: 0;
+        left: 0;
+        border-radius: 0 8px 0 0;
+    }
+}
+
+// ─── CORNER style — lipatan diagonal di pojok (classic ribbon) ──────────────
+.env-ribbon-style-corner {
+    text-align: center;
+    padding: 6px 0;
+    width: 170px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+
+    &.env-ribbon-pos-top_right {
+        top: 28px;
+        right: -48px;
+        transform: rotate(45deg);
+    }
+
+    &.env-ribbon-pos-top_left {
+        top: 28px;
+        left: -48px;
+        transform: rotate(-45deg);
+    }
+
+    &.env-ribbon-pos-bottom_right {
+        bottom: 28px;
+        right: -48px;
+        transform: rotate(-45deg);
+    }
+
+    &.env-ribbon-pos-bottom_left {
+        bottom: 28px;
+        left: -48px;
+        transform: rotate(45deg);
+    }
+}
+
+// ─── VERTICAL style — teks menyamping, menempel di sisi kiri/kanan ──────────
+.env-ribbon-style-vertical {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 6px;
+    box-shadow: -2px 0 6px rgba(0, 0, 0, 0.2);
+    top: 50%;
+
+    &.env-ribbon-pos-top_right,
+    &.env-ribbon-pos-bottom_right {
+        right: 0;
+        transform: translateY(-50%);
+        border-radius: 8px 0 0 8px;
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+    }
+
+    &.env-ribbon-pos-top_left,
+    &.env-ribbon-pos-bottom_left {
+        left: 0;
+        transform: translateY(-50%) rotate(180deg);
+        border-radius: 0 8px 8px 0;
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+    }
+}
+
+// ─── BANNER style — full-width bar atas atau bawah ──────────────────────────
+.env-ribbon-style-banner {
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 6px 20px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    font-size: 13px;
+
+    &.env-ribbon-pos-top_right,
+    &.env-ribbon-pos-top_left {
+        top: 0;
+    }
+
+    &.env-ribbon-pos-bottom_right,
+    &.env-ribbon-pos-bottom_left {
+        bottom: 0;
+    }
+}
+
+// ─── Mobile ─────────────────────────────────────────────────────────────────
+@media (max-width: 768px) {
+    .env-ribbon {
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    .env-ribbon-style-corner {
+        display: none;
+    }
+
+    .env-ribbon-style-vertical {
+        padding: 10px 5px;
+        font-size: 10px;
+    }
+
+    .env-ribbon-style-banner {
+        padding: 4px 10px;
+        font-size: 11px;
+    }
+}

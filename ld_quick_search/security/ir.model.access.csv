@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_ld_quick_search_recent_user,ld.quick_search.recent user,model_ld_quick_search_recent,base.group_user,1,1,1,1
+access_ld_quick_search_recent_portal,ld.quick_search.recent portal,model_ld_quick_search_recent,base.group_portal,1,1,1,1
+access_ld_quick_search_favorite_user,ld.quick_search.favorite user,model_ld_quick_search_favorite,base.group_user,1,1,1,1
+access_ld_quick_search_favorite_portal,ld.quick_search.favorite portal,model_ld_quick_search_favorite,base.group_portal,1,1,1,1

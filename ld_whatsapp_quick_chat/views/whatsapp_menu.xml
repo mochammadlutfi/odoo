@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="menu_whatsapp_root"
+              name="WhatsApp"
+              sequence="90"
+              web_icon="ld_whatsapp_quick_chat,static/description/icon.png"/>
+
+    <menuitem id="menu_whatsapp_templates"
+              name="Templates"
+              parent="menu_whatsapp_root"
+              action="action_whatsapp_template"
+              sequence="10"/>
+
+    <menuitem id="menu_whatsapp_log"
+              name="Message Log"
+              parent="menu_whatsapp_root"
+              action="action_whatsapp_message_log"
+              sequence="20"/>
+
+</odoo>

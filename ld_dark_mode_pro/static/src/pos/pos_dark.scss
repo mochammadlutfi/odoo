@@ -1,0 +1,44 @@
+// POS-specific dark tweaks. Loaded via `point_of_sale.assets` — this bundle
+// entry is silently ignored if POS is not installed.
+//
+// Odoo 18 POS does not ship a built-in dark mode. We apply a minimal dark
+// skin that respects the same data-ld-dark root attribute, so POS follows
+// the user's backend preference.
+
+html[data-ld-dark="1"] {
+    .pos {
+        background-color: var(--ld-dm-bg);
+        color: var(--ld-dm-fg);
+    }
+
+    .pos .leftpane,
+    .pos .rightpane,
+    .pos .order-selector,
+    .pos .product-screen {
+        background-color: var(--ld-dm-card-bg);
+        color: var(--ld-dm-fg);
+        border-color: var(--ld-dm-border);
+    }
+
+    .pos .product-list .product,
+    .pos .orderline,
+    .pos .order-summary {
+        background-color: var(--ld-dm-card-bg);
+        color: var(--ld-dm-fg);
+        border-color: var(--ld-dm-border);
+    }
+
+    .pos input,
+    .pos .search-bar,
+    .pos .numpad {
+        background-color: var(--ld-dm-bg);
+        color: var(--ld-dm-fg);
+        border-color: var(--ld-dm-border);
+    }
+
+    // Keep receipt preview light — customers expect printed-paper look.
+    .pos .receipt-screen .pos-receipt {
+        background-color: #ffffff !important;
+        color: #000000 !important;
+    }
+}

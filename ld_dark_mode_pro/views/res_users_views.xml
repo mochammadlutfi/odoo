@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Full user form (admin view) -->
+    <record id="view_users_form_inherit_dark_mode" model="ir.ui.view">
+        <field name="name">res.users.form.inherit.ld_dark_mode_pro</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='preferences']" position="inside">
+                <group string="Dark Mode" name="ld_dark_mode_group">
+                    <field name="dark_mode_preference"/>
+                    <field name="dark_mode_schedule_start"
+                           invisible="dark_mode_preference != 'schedule'"
+                           widget="float_time"/>
+                    <field name="dark_mode_schedule_end"
+                           invisible="dark_mode_preference != 'schedule'"
+                           widget="float_time"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Self-service preferences modal -->
+    <record id="view_users_form_simple_modif_inherit_dark_mode" model="ir.ui.view">
+        <field name="name">res.users.preferences.form.inherit.ld_dark_mode_pro</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form_simple_modif"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='preferences']" position="inside">
+                <group string="Dark Mode" name="ld_dark_mode_group">
+                    <field name="dark_mode_preference"/>
+                    <field name="dark_mode_schedule_start"
+                           invisible="dark_mode_preference != 'schedule'"
+                           widget="float_time"/>
+                    <field name="dark_mode_schedule_end"
+                           invisible="dark_mode_preference != 'schedule'"
+                           widget="float_time"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

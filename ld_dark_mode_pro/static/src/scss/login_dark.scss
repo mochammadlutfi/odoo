@@ -1,0 +1,65 @@
+// Login-page dark mode — Odoo 18 native dark bundle does NOT theme the
+// public login layout. This file fills that gap.
+//
+// Scoped under html[data-ld-dark="1"] so it only activates when our
+// early script has resolved the effective mode to dark.
+
+html[data-ld-dark="1"] {
+    body.bg-100,
+    body {
+        background-color: var(--ld-dm-bg) !important;
+        color: var(--ld-dm-fg) !important;
+    }
+
+    .card.o_database_list,
+    .card,
+    form.oe_login_form {
+        background-color: var(--ld-dm-card-bg) !important;
+        color: var(--ld-dm-fg) !important;
+        border-color: var(--ld-dm-border) !important;
+    }
+
+    .border-bottom {
+        border-color: var(--ld-dm-border) !important;
+    }
+
+    input.form-control,
+    select.form-control,
+    textarea.form-control,
+    input.form-select,
+    select.form-select {
+        background-color: var(--ld-dm-bg) !important;
+        color: var(--ld-dm-fg) !important;
+        border-color: var(--ld-dm-border) !important;
+    }
+
+    input.form-control::placeholder {
+        color: var(--ld-dm-muted);
+    }
+
+    .btn-primary {
+        background-color: #6ea8fe;
+        border-color: #6ea8fe;
+        color: #1f1f23;
+    }
+
+    .btn-secondary {
+        background-color: var(--ld-dm-card-bg);
+        border-color: var(--ld-dm-border);
+        color: var(--ld-dm-fg);
+    }
+
+    a {
+        color: var(--ld-dm-link);
+    }
+
+    .text-muted {
+        color: var(--ld-dm-muted) !important;
+    }
+
+    // Brand/footer tweaks for visibility
+    .o_footer .o_brand_promotion,
+    .o_footer_copyright {
+        color: var(--ld-dm-muted);
+    }
+}

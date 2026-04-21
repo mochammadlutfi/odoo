@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_ld_dark_mode_config_list" model="ir.ui.view">
+        <field name="name">ld.dark_mode.config.list</field>
+        <field name="model">ld.dark_mode.config</field>
+        <field name="arch" type="xml">
+            <list string="Dark Mode Policies">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="default_mode"/>
+                <field name="apply_to_company_ids" widget="many2many_tags"
+                       optional="show"/>
+                <field name="apply_to_department_ids" widget="many2many_tags"
+                       optional="show"/>
+                <field name="apply_to_group_ids" widget="many2many_tags"
+                       optional="hide"/>
+                <field name="active" widget="boolean_toggle"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_ld_dark_mode_config_form" model="ir.ui.view">
+        <field name="name">ld.dark_mode.config.form</field>
+        <field name="model">ld.dark_mode.config</field>
+        <field name="arch" type="xml">
+            <form string="Dark Mode Policy">
+                <sheet>
+                    <widget name="web_ribbon" title="Archived"
+                            bg_color="text-bg-danger" invisible="active"/>
+                    <field name="active" invisible="1"/>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="default_mode"/>
+                            <field name="sequence"/>
+                        </group>
+                        <group>
+                            <field name="whitelist_modules"
+                                   placeholder="e.g. account_reports,website_sale"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Scope" name="scope">
+                            <group>
+                                <field name="apply_to_company_ids"
+                                       widget="many2many_tags"/>
+                                <field name="apply_to_department_ids"
+                                       widget="many2many_tags"/>
+                                <field name="apply_to_group_ids"
+                                       widget="many2many_tags"/>
+                            </group>
+                            <p class="text-muted">
+                                Empty scope means the policy applies to all
+                                companies / departments / groups. Individual
+                                users can still override via their own
+                                preferences.
+                            </p>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_ld_dark_mode_config_search" model="ir.ui.view">
+        <field name="name">ld.dark_mode.config.search</field>
+        <field name="model">ld.dark_mode.config</field>
+        <field name="arch" type="xml">
+            <search string="Dark Mode Policies">
+                <field name="name"/>
+                <filter string="Archived" name="inactive"
+                        domain="[('active', '=', False)]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Default Mode" name="group_default_mode"
+                            context="{'group_by': 'default_mode'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_ld_dark_mode_config" model="ir.actions.act_window">
+        <field name="name">Dark Mode Policies</field>
+        <field name="res_model">ld.dark_mode.config</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_ld_dark_mode_config_search"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a Dark Mode policy
+            </p>
+            <p>
+                Policies set default dark-mode behaviour for users in specific
+                companies, departments, or groups. Individual users can still
+                override via their own preferences.
+            </p>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,90 @@
+# Indonesian translation for ld_web_favicon_pro
+# Copyright (C) 2024 Mochammad Lutfi
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Module ld_web_favicon_pro\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 00:00+0000\n"
+"PO-Revision-Date: 2024-01-01 00:00+0000\n"
+"Last-Translator: Mochammad Lutfi\n"
+"Language-Team: Indonesian\n"
+"Language: id\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. model fields
+msgid "Favicon"
+msgstr "Favicon"
+
+msgid "Auto-generate from Logo"
+msgstr "Generate Otomatis dari Logo"
+
+msgid "Environment Badge"
+msgstr "Lencana Lingkungan"
+
+msgid "Apple Touch Icon (180x180)"
+msgstr "Apple Touch Icon (180x180)"
+
+msgid "Android Icon 192x192"
+msgstr "Ikon Android 192x192"
+
+msgid "Android Icon 512x512"
+msgstr "Ikon Android 512x512"
+
+#. view strings
+msgid "Favicon Settings"
+msgstr "Pengaturan Favicon"
+
+msgid "Manual Favicon"
+msgstr "Favicon Manual"
+
+msgid "Generated Icons (read-only)"
+msgstr "Ikon Hasil Generate (hanya baca)"
+
+msgid "Apple Touch Icon (180×180)"
+msgstr "Apple Touch Icon (180×180)"
+
+msgid "Android Chrome 192×192"
+msgstr "Android Chrome 192×192"
+
+msgid "Android Chrome 512×512"
+msgstr "Android Chrome 512×512"
+
+msgid "Generate Favicon from Logo"
+msgstr "Generate Favicon dari Logo"
+
+msgid "Clear Favicon Cache"
+msgstr "Hapus Cache Favicon"
+
+msgid "Available URLs after generation:"
+msgstr "URL tersedia setelah generate:"
+
+#. Python messages
+msgid "Pillow library is required. Install with: pip install Pillow"
+msgstr "Library Pillow diperlukan. Install dengan: pip install Pillow"
+
+msgid "No company logo found"
+msgstr "Logo perusahaan tidak ditemukan"
+
+msgid "Pillow not installed"
+msgstr "Pillow belum terinstall"
+
+msgid "Favicon Generated"
+msgstr "Favicon Berhasil Dibuat"
+
+msgid "Favicon successfully generated from company logo."
+msgstr "Favicon berhasil di-generate dari logo perusahaan."
+
+msgid "Favicon Cleared"
+msgstr "Favicon Dihapus"
+
+msgid "Favicon cache cleared. Browser will reload the new favicon."
+msgstr "Cache favicon dihapus. Browser akan memuat favicon baru."
+
+#. selection values
+msgid "None"
+msgstr "Tidak Ada"
+
+msgid "Auto (sync with ribbon config)"
+msgstr "Otomatis (sinkron dengan konfigurasi ribbon)"

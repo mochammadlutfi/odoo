@@ -1,0 +1,166 @@
+# Indonesian translation for Environment Ribbon Pro
+# Copyright (C) 2024 Mochammad Lutfi
+# This file is distributed under the same license as the ld_env_ribbon_pro module.
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Module ld_env_ribbon_pro\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 00:00+0000\n"
+"PO-Revision-Date: 2024-01-01 00:00+0000\n"
+"Last-Translator: Mochammad Lutfi <mochammadlutfi125@gmail.com>\n"
+"Language-Team: Indonesian\n"
+"Language: id\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. view: setting strings
+msgid "Enable Ribbon"
+msgstr "Aktifkan Ribbon"
+
+msgid "Enable Environment Ribbon"
+msgstr "Aktifkan Environment Ribbon"
+
+msgid "Environment Type"
+msgstr "Tipe Environment"
+
+msgid "Custom Text"
+msgstr "Teks Kustom"
+
+msgid "Ribbon Style"
+msgstr "Tampilan Ribbon"
+
+msgid "Bar (Lurus)"
+msgstr "Bar (Lurus)"
+
+msgid "Corner (Sudut Diagonal)"
+msgstr "Corner (Sudut Diagonal)"
+
+msgid "Vertical (Menyamping)"
+msgstr "Vertical (Menyamping)"
+
+msgid "Banner (Full Width)"
+msgstr "Banner (Lebar Penuh)"
+
+msgid "Ribbon Position"
+msgstr "Posisi Ribbon"
+
+msgid "Top Right"
+msgstr "Kanan Atas"
+
+msgid "Top Left"
+msgstr "Kiri Atas"
+
+msgid "Bottom Right"
+msgstr "Kanan Bawah"
+
+msgid "Bottom Left"
+msgstr "Kiri Bawah"
+
+msgid "Color Mode"
+msgstr "Mode Warna"
+
+msgid "Allow Dismiss"
+msgstr "Izinkan Disembunyikan"
+
+msgid "Audit Production Access"
+msgstr "Audit Akses Produksi"
+
+msgid "ODOO_ENV Variable"
+msgstr "Variabel ODOO_ENV"
+
+#. view: help texts
+msgid "Show a visual environment indicator on all backend pages."
+msgstr "Tampilkan indikator visual environment di semua halaman backend."
+
+msgid "Detected value of the ODOO_ENV environment variable. When set, it overrides manual configuration."
+msgstr "Nilai variabel ODOO_ENV yang terdeteksi. Jika diset, akan menggantikan konfigurasi manual."
+
+msgid "Ribbon color and text will automatically adjust based on the selected environment."
+msgstr "Warna dan teks ribbon akan menyesuaikan otomatis sesuai environment yang dipilih."
+
+msgid "Custom ribbon text. Leave empty to use the default environment label."
+msgstr "Teks ribbon kustom. Kosongkan untuk menggunakan label default environment."
+
+msgid "Position of the ribbon on screen."
+msgstr "Posisi ribbon di layar."
+
+msgid "Users can hide the ribbon for the day. Automatically disabled for Production environments."
+msgstr "User dapat menyembunyikan ribbon untuk hari ini. Otomatis dinonaktifkan untuk environment Production."
+
+msgid "Log every session that accesses the Production environment."
+msgstr "Catat setiap sesi yang mengakses environment Production."
+
+#. selection values
+msgid "Development"
+msgstr "Development"
+
+msgid "Staging"
+msgstr "Staging"
+
+msgid "Production"
+msgstr "Produksi"
+
+msgid "Demo"
+msgstr "Demo"
+
+msgid "Test"
+msgstr "Test"
+
+msgid "Custom"
+msgstr "Kustom"
+
+msgid "Top Right"
+msgstr "Kanan Atas"
+
+msgid "Top Left"
+msgstr "Kiri Atas"
+
+msgid "Bottom Right"
+msgstr "Kanan Bawah"
+
+msgid "Diagonal"
+msgstr "Diagonal"
+
+msgid "Use Preset Color"
+msgstr "Gunakan Warna Preset"
+
+msgid "Custom Color (Hex)"
+msgstr "Warna Kustom (Hex)"
+
+#. model fields
+msgid "Allow users to dismiss ribbon"
+msgstr "Izinkan user menyembunyikan ribbon"
+
+msgid "Production Access Log"
+msgstr "Log Akses Produksi"
+
+msgid "Environment Ribbon Production Access Log"
+msgstr "Log Akses Produksi Environment Ribbon"
+
+msgid "User"
+msgstr "Pengguna"
+
+msgid "Access Time"
+msgstr "Waktu Akses"
+
+msgid "IP Address"
+msgstr "Alamat IP"
+
+msgid "User Agent"
+msgstr "User Agent"
+
+msgid "Action"
+msgstr "Aksi"
+
+msgid "Login"
+msgstr "Login"
+
+msgid "Session Start"
+msgstr "Mulai Sesi"
+
+msgid "Dismiss for today"
+msgstr "Sembunyikan hari ini"
+
+msgid "View Access Log"
+msgstr "Lihat Log Akses"

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_data_exchange" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.data.exchange</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="inside">
+                <app data-string="Data Exchange" string="Data Exchange" name="ld_data_exchange"
+                     groups="base.group_system">
+                    <block title="Clipboard Copy" name="clipboard_copy">
+                        <setting id="copy_field_double_click_setting"
+                                 help="Double-click any field value to copy it to the clipboard.">
+                            <field name="copy_field_double_click"/>
+                        </setting>
+                        <setting id="default_copy_format_setting"
+                                 string="Default Copy Format"
+                                 help="Format used when copying list view data to clipboard.">
+                            <field name="default_copy_format"/>
+                        </setting>
+                    </block>
+                </app>
+            </xpath>
+        </field>
+    </record>
+</odoo>

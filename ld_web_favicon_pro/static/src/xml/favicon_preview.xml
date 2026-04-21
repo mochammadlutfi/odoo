@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="ld_web_favicon_pro.FaviconPreview">
+        <div class="o_favicon_preview">
+            <div t-if="state.loading" class="text-muted">
+                <i class="fa fa-spinner fa-spin me-1"/> Loading preview...
+            </div>
+            <div t-elif="state.error" class="alert alert-warning py-2">
+                <i class="fa fa-exclamation-triangle me-1"/>
+                <t t-esc="state.error"/>
+            </div>
+            <div t-else="" class="d-flex flex-wrap gap-3 align-items-end">
+                <div t-if="state.previews['16x16']" class="text-center">
+                    <div class="border rounded p-2 bg-white"
+                         style="display:inline-block; min-width:32px; min-height:32px;">
+                        <img t-att-src="'data:image/png;base64,' + state.previews['16x16']"
+                             width="16" height="16" alt="16x16"/>
+                    </div>
+                    <div class="small text-muted mt-1">16×16</div>
+                </div>
+                <div t-if="state.previews['32x32']" class="text-center">
+                    <div class="border rounded p-2 bg-white"
+                         style="display:inline-block; min-width:48px; min-height:48px;">
+                        <img t-att-src="'data:image/png;base64,' + state.previews['32x32']"
+                             width="32" height="32" alt="32x32"/>
+                    </div>
+                    <div class="small text-muted mt-1">32×32</div>
+                </div>
+                <div t-if="state.previews['180x180']" class="text-center">
+                    <div class="border rounded p-2 bg-white"
+                         style="display:inline-block; min-width:64px; min-height:64px;">
+                        <img t-att-src="'data:image/png;base64,' + state.previews['180x180']"
+                             width="64" height="64" alt="180x180"/>
+                    </div>
+                    <div class="small text-muted mt-1">180×180<br/>(Apple)</div>
+                </div>
+                <div t-if="!state.previews['16x16'] and !state.loading and !state.error"
+                     class="text-muted fst-italic small">
+                    Click "Generate Favicon from Logo" to see a preview.
+                </div>
+            </div>
+
+            <div t-if="state.faviconUrl" class="mt-2">
+                <div class="small text-muted">
+                    <i class="fa fa-link me-1"/>
+                    Live URL:
+                    <a t-att-href="state.faviconUrl" target="_blank" class="ms-1">
+                        <t t-esc="state.faviconUrl"/>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </t>
+
+</templates>

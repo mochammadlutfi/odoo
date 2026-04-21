@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <record id="wa_template_order_confirm" model="whatsapp.template">
+        <field name="name">Konfirmasi Order</field>
+        <field name="category">order</field>
+        <field name="sequence">10</field>
+        <field name="model_id" ref="sale.model_sale_order"/>
+        <field name="is_default" eval="True"/>
+        <field name="body">Halo {{partner_name}},
+
+Terima kasih atas pesanan Anda!
+
+Detail Order:
+*Nomor:* {{record_name}}
+*Total:* Rp {{amount}}
+
+Pesanan Anda sedang kami proses.
+
+Salam,
+{{company_name}}</field>
+    </record>
+
+    <record id="wa_template_order_ready" model="whatsapp.template">
+        <field name="name">Order Ready for Pickup</field>
+        <field name="category">order</field>
+        <field name="sequence">20</field>
+        <field name="model_id" ref="sale.model_sale_order"/>
+        <field name="body">Halo {{partner_name}},
+
+Kabar baik! Pesanan {{record_name}} sudah siap untuk diambil.
+
+Total: Rp {{amount}}
+
+Silakan datang ke lokasi kami pada jam operasional.
+
+Salam,
+{{company_name}}</field>
+    </record>
+
+    <record id="wa_template_invoice_reminder" model="whatsapp.template">
+        <field name="name">Invoice Reminder</field>
+        <field name="category">invoice</field>
+        <field name="sequence">30</field>
+        <field name="model_id" ref="account.model_account_move"/>
+        <field name="is_default" eval="True"/>
+        <field name="body">Halo {{partner_name}},
+
+Kami ingin mengingatkan invoice berikut akan jatuh tempo:
+
+*Invoice:* {{invoice_number}}
+*Jumlah:* Rp {{amount}}
+*Jatuh Tempo:* {{due_date}}
+
+Mohon untuk segera melakukan pembayaran.
+
+Terima kasih.
+
+Salam,
+{{company_name}}</field>
+    </record>
+
+    <record id="wa_template_payment_received" model="whatsapp.template">
+        <field name="name">Payment Received</field>
+        <field name="category">invoice</field>
+        <field name="sequence">40</field>
+        <field name="model_id" ref="account.model_account_move"/>
+        <field name="body">Halo {{partner_name}},
+
+Kami konfirmasi pembayaran Anda telah kami terima:
+
+*Invoice:* {{invoice_number}}
+*Jumlah:* Rp {{amount}}
+
+Terima kasih atas pembayaran yang tepat waktu.
+
+Salam,
+{{company_name}}</field>
+    </record>
+
+    <record id="wa_template_late_payment" model="whatsapp.template">
+        <field name="name">Late Payment Warning</field>
+        <field name="category">invoice</field>
+        <field name="sequence">50</field>
+        <field name="model_id" ref="account.model_account_move"/>
+        <field name="body">Halo {{partner_name}},
+
+Invoice berikut telah melewati jatuh tempo:
+
+*Invoice:* {{invoice_number}}
+*Jumlah:* Rp {{amount}}
+*Jatuh Tempo:* {{due_date}}
+
+Mohon segera melakukan pembayaran. Jika ada kendala mohon hubungi kami.
+
+Terima kasih.
+
+Salam,
+{{company_name}}</field>
+    </record>
+
+    <record id="wa_template_follow_up" model="whatsapp.template">
+        <field name="name">Follow-up Proposal</field>
+        <field name="category">follow_up</field>
+        <field name="sequence">60</field>
+        <field name="model_id" ref="crm.model_crm_lead"/>
+        <field name="is_default" eval="True"/>
+        <field name="body">Halo {{partner_name}},
+
+Selamat siang! Saya {{user_name}} dari {{company_name}}.
+
+Saya ingin follow up terkait {{record_name}}.
+
+Apakah ada pertanyaan yang perlu didiskusikan? Saya siap membantu.
+
+Terima kasih!</field>
+    </record>
+
+    <record id="wa_template_thank_you" model="whatsapp.template">
+        <field name="name">Thank You After Purchase</field>
+        <field name="category">thank_you</field>
+        <field name="sequence">70</field>
+        <field name="body">Halo {{partner_name}},
+
+Terima kasih telah berbelanja di {{company_name}}!
+
+Kami menghargai kepercayaan Anda. Jangan ragu menghubungi kami jika ada pertanyaan.
+
+Salam hangat,
+{{company_name}}</field>
+    </record>
+
+    <record id="wa_template_birthday" model="whatsapp.template">
+        <field name="name">Happy Birthday Customer</field>
+        <field name="category">greeting</field>
+        <field name="sequence">80</field>
+        <field name="body">Selamat ulang tahun, {{partner_name}}!
+
+Semoga di hari spesial ini Anda diberikan kesehatan, kebahagiaan, dan kesuksesan selalu.
+
+Salam hangat,
+{{company_name}}</field>
+    </record>
+
+    <record id="wa_template_appointment_reminder" model="whatsapp.template">
+        <field name="name">Appointment Reminder</field>
+        <field name="category">reminder</field>
+        <field name="sequence">90</field>
+        <field name="body">Halo {{partner_name}},
+
+Kami ingin mengingatkan Anda memiliki janji dengan kami.
+
+Mohon konfirmasi kehadiran Anda. Jika ada perubahan jadwal, mohon beritahu kami sebelumnya.
+
+Terima kasih!
+
+Salam,
+{{company_name}}</field>
+    </record>
+
+    <record id="wa_template_holiday_greeting" model="whatsapp.template">
+        <field name="name">Holiday Greeting</field>
+        <field name="category">greeting</field>
+        <field name="sequence">100</field>
+        <field name="body">Selamat hari raya, {{partner_name}}!
+
+Semoga hari raya ini membawa kedamaian, kebahagiaan, dan keberkahan untuk Anda dan keluarga.
+
+Terima kasih atas kepercayaan Anda kepada {{company_name}} selama ini.
+
+Salam hangat,
+Tim {{company_name}}</field>
+    </record>
+
+</odoo>

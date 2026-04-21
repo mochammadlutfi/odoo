@@ -1,0 +1,46 @@
+# Indonesian translation for PDF Preview Pro
+# Copyright (C) 2024 Luduh Dev
+# This file is distributed under the same license as the ld_pdf_preview_pro module.
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 00:00+0000\n"
+"PO-Revision-Date: 2024-01-01 00:00+0000\n"
+"Last-Translator: Luduh Dev\n"
+"Language-Team: Indonesian\n"
+"Language: id\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "Halaman %s dari %s"
+msgstr "Halaman %s dari %s"
+
+msgid "Memuat PDF..."
+msgstr "Memuat PDF..."
+
+msgid "Gagal memuat PDF. Silakan coba lagi."
+msgstr "Gagal memuat PDF. Silakan coba lagi."
+
+msgid "Perkecil"
+msgstr "Perkecil"
+
+msgid "Perbesar"
+msgstr "Perbesar"
+
+msgid "Cetak"
+msgstr "Cetak"
+
+msgid "Unduh"
+msgstr "Unduh"
+
+msgid "Halaman sebelumnya"
+msgstr "Halaman sebelumnya"
+
+msgid "Halaman berikutnya"
+msgstr "Halaman berikutnya"
+
+msgid "Error"
+msgstr "Error"

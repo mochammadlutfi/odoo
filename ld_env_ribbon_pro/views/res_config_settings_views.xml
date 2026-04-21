@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_ribbon" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.ribbon</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="inside">
+                <app data-string="Environment Ribbon" string="Environment Ribbon" name="ld_env_ribbon_pro">
+
+                    <block title="Environment Ribbon" name="ribbon_main_setting_container">
+                        <setting string="Enable Ribbon" help="Show a visual environment indicator on all backend pages.">
+                            <field name="ribbon_enabled" widget="boolean_toggle"/>
+                        </setting>
+
+                        <setting string="ODOO_ENV Variable" invisible="not ribbon_enabled"
+                                 help="Detected value of the ODOO_ENV environment variable. When set, it overrides manual configuration.">
+                            <field name="ribbon_env_var_detected" readonly="1"/>
+                        </setting>
+                    </block>
+
+                    <block title="Ribbon Display" name="ribbon_display_setting_container"
+                           invisible="not ribbon_enabled">
+
+                        <setting string="Environment Type"
+                                 help="Ribbon color and text will automatically adjust based on the selected environment.">
+                            <field name="ribbon_environment"/>
+                        </setting>
+
+                        <setting string="Custom Text"
+                                 help="Custom ribbon text. Leave empty to use the default environment label.">
+                            <field name="ribbon_text_custom" placeholder="e.g. MY COMPANY - PROD"/>
+                        </setting>
+
+                        <setting string="Ribbon Style"
+                                 help="Bar: lurus di tepi. Corner: lipatan diagonal di sudut. Vertical: menyamping di sisi. Banner: full-width atas/bawah.">
+                            <field name="ribbon_style"/>
+                        </setting>
+
+                        <setting string="Ribbon Position"
+                                 help="Posisi ribbon di layar. Untuk style Banner, pilihan top_right/top_left menempatkan di atas, bottom_right/bottom_left di bawah.">
+                            <field name="ribbon_position"/>
+                        </setting>
+
+                        <setting string="Color Mode">
+                            <field name="ribbon_color_mode"/>
+                            <div invisible="ribbon_color_mode != 'custom'" class="mt8">
+                                <field name="ribbon_color_custom" placeholder="#ef4444"/>
+                            </div>
+                        </setting>
+
+                    </block>
+
+                    <block title="Behavior &amp; Audit" name="ribbon_behavior_setting_container"
+                           invisible="not ribbon_enabled">
+
+                        <setting string="Allow Dismiss"
+                                 help="Users can hide the ribbon for the day. Automatically disabled for Production environments.">
+                            <field name="ribbon_user_dismissable" widget="boolean_toggle"/>
+                        </setting>
+
+                        <setting string="Audit Production Access"
+                                 help="Log every session that accesses the Production environment.">
+                            <field name="ribbon_audit_production_access" widget="boolean_toggle"/>
+                            <div invisible="not ribbon_audit_production_access" class="mt8">
+                                <button name="%(ld_env_ribbon_pro.action_env_ribbon_audit_log)d"
+                                        type="action"
+                                        string="View Access Log"
+                                        icon="oi-arrow-right"
+                                        class="btn-link"/>
+                            </div>
+                        </setting>
+
+                    </block>
+
+                </app>
+            </xpath>
+        </field>
+    </record>
+</odoo>

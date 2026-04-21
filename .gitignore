@@ -1,0 +1,30 @@
+# macOS
+.DS_Store
+._*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.eggs/
+
+# Editors / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Odoo runtime
+*.log
+.odoorc
+filestore/
+sessions/
+
+# Env
+.env
+.venv/
+venv/

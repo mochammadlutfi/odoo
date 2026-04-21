@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <!--
+        Reserved for future rich dropdown. The current toggle uses the plain
+        callback user_menuitems item (no template). This file exists so the
+        manifest asset entry stays stable while the richer UI is added.
+    -->
+    <t t-name="ld_dark_mode_pro.ToggleIcon">
+        <i t-attf-class="fa #{props.mode === 'dark' ? 'fa-moon-o' : 'fa-sun-o'} ld_dm_toggle_icon"
+           role="img" aria-hidden="true"/>
+    </t>
+</templates>

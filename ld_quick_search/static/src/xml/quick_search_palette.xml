@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="ld_quick_search.Palette">
+        <t t-if="state.open">
+            <div class="o_qs_backdrop"
+                 t-on-click="onBackdropClick"
+                 role="dialog"
+                 aria-modal="true"
+                 aria-labelledby="o_qs_title">
+                <h2 id="o_qs_title" class="o_qs_sr_only">Quick search</h2>
+                <div class="o_qs_palette" t-on-click.stop="">
+                    <div class="o_qs_input_wrap">
+                        <i class="fa fa-search o_qs_search_icon" aria-hidden="true"/>
+                        <input
+                            t-ref="input"
+                            class="o_qs_input"
+                            type="text"
+                            placeholder="Type to search — use '@model', '&gt;' for actions, '#' for settings"
+                            aria-label="Quick search"
+                            t-att-value="state.input"
+                            t-on-input="onInput"
+                        />
+                        <span class="o_qs_hint">Esc</span>
+                    </div>
+                    <div class="o_qs_results" role="listbox" aria-live="polite">
+                        <t t-if="state.loading">
+                            <div class="o_qs_loading">Searching…</div>
+                        </t>
+                        <t t-if="!state.loading and state.results.length === 0 and state.emptyHint">
+                            <div class="o_qs_empty"><t t-esc="state.emptyHint"/></div>
+                        </t>
+                        <t t-foreach="state.results" t-as="r" t-key="resultKey(r, r_index)">
+                            <div
+                                class="o_qs_result"
+                                t-att-class="{ 'o_qs_selected': r_index === state.selectedIndex }"
+                                t-on-click="() => this.onResultClick(r_index)"
+                                role="option"
+                                t-att-aria-selected="r_index === state.selectedIndex ? 'true' : 'false'"
+                            >
+                                <span class="o_qs_type_badge" t-att-data-type="r.type">
+                                    <t t-esc="r.type"/>
+                                </span>
+                                <span class="o_qs_label">
+                                    <t t-if="r._spans and r._spans.length">
+                                        <t t-foreach="r._spans" t-as="s" t-key="s_index">
+                                            <span t-att-class="s.match ? 'o_qs_match' : ''"><t t-esc="s.value"/></span>
+                                        </t>
+                                    </t>
+                                    <t t-else="">
+                                        <t t-esc="r.label"/>
+                                    </t>
+                                </span>
+                                <t t-if="r.path">
+                                    <span class="o_qs_path"><t t-esc="r.path"/></span>
+                                </t>
+                                <t t-if="r._group">
+                                    <span class="o_qs_group_tag"><t t-esc="r._group"/></span>
+                                </t>
+                            </div>
+                        </t>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </t>
+
+</templates>

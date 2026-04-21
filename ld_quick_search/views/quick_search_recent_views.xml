@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_quick_search_recent_list" model="ir.ui.view">
+        <field name="name">ld.quick_search.recent.list</field>
+        <field name="model">ld.quick_search.recent</field>
+        <field name="arch" type="xml">
+            <list string="Recent Quick Searches">
+                <field name="user_id"/>
+                <field name="search_query"/>
+                <field name="res_model"/>
+                <field name="res_id"/>
+                <field name="action_id"/>
+                <field name="use_count"/>
+                <field name="last_used"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_quick_search_recent" model="ir.actions.act_window">
+        <field name="name">Recent Quick Searches</field>
+        <field name="res_model">ld.quick_search.recent</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="menu_quick_search_root"
+              name="Quick Search"
+              parent="base.menu_administration"
+              sequence="90"/>
+    <menuitem id="menu_quick_search_recent"
+              name="Recent Searches"
+              parent="menu_quick_search_root"
+              action="action_quick_search_recent"
+              sequence="10"/>
+
+</odoo>

@@ -1,0 +1,45 @@
+# Translation template for ld_dark_mode_pro module.
+# Copyright (C) 2026 Mochammad Lutfi
+# This file is distributed under the same license as the module.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-21 00:00+0000\n"
+"PO-Revision-Date: 2026-04-21 00:00+0000\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+msgid "Dark Mode"
+msgstr ""
+
+msgid "Dark Mode Policies"
+msgstr ""
+
+msgid "Dark Mode Policy"
+msgstr ""
+
+msgid "Dark Mode: %s"
+msgstr ""
+
+msgid "Light Mode"
+msgstr ""
+
+msgid "Auto (Follow OS)"
+msgstr ""
+
+msgid "Schedule"
+msgstr ""
+
+msgid "Dark Mode Start"
+msgstr ""
+
+msgid "Dark Mode End"
+msgstr ""
+
+msgid "Dark Mode schedule hours must be within [0.0, 24.0)."
+msgstr ""

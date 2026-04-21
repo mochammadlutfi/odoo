@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Dark Mode Pro — Odoo 18</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 960px; margin: 0 auto; padding: 2rem; color: #262a36; }
+        h1 { font-size: 2.2rem; margin-bottom: 0.2rem; }
+        h2 { margin-top: 2rem; border-bottom: 1px solid #eee; padding-bottom: 0.3rem; }
+        .hero { text-align: center; padding: 2rem; background: linear-gradient(135deg, #1f1f23, #2a2a32); color: #fff; border-radius: 8px; margin-bottom: 2rem; }
+        .hero h1 { color: #fff; }
+        .hero p { font-size: 1.1rem; opacity: 0.85; }
+        ul { line-height: 1.8; }
+        .feature { margin-bottom: 1rem; }
+        .screenshots { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
+        .screenshots img { width: 100%; border-radius: 4px; border: 1px solid #eee; }
+    </style>
+</head>
+<body>
+
+<section class="hero">
+    <h1>Dark Mode Pro</h1>
+    <p>Odoo 18 dark mode that actually works. Persistent. Schedulable. No flicker.</p>
+</section>
+
+<h2>What it fixes</h2>
+<ul>
+    <li><strong>No more flicker on login</strong> — the inline head script applies dark before first paint.</li>
+    <li><strong>Persistent across sessions</strong> — preference saved on <code>res.users</code>.</li>
+    <li><strong>OS auto-detect</strong> — follows <code>prefers-color-scheme</code> on Chrome, Firefox, Safari, Edge.</li>
+    <li><strong>Schedule mode</strong> — e.g. dark 19:00–07:00 (with wrap-around).</li>
+    <li><strong>Consistent coverage</strong> — backend, POS, report preview, wizards.</li>
+    <li><strong>Admin policies</strong> — scope defaults by company, department, or user group.</li>
+</ul>
+
+<h2>Use cases</h2>
+<ul>
+    <li>Developers working 10+ hours/day in Odoo — eye strain reduction.</li>
+    <li>Finance teams working late nights — auto-switch at 19:00.</li>
+    <li>IT admins deploying company-wide dark defaults — individual opt-out preserved.</li>
+</ul>
+
+<h2>Pricing</h2>
+<p><strong>Free forever.</strong> LGPL-3 licensed.</p>
+
+<h2>Compatibility</h2>
+<ul>
+    <li>Odoo 18 Community</li>
+    <li>Odoo 18 Enterprise</li>
+    <li>Chrome / Firefox / Safari / Edge (modern)</li>
+</ul>
+
+<h2>Screenshots</h2>
+<div class="screenshots">
+    <img src="screenshot_01.png" alt="User menu toggle"/>
+    <img src="screenshot_02.png" alt="User preferences"/>
+    <img src="screenshot_03.png" alt="Schedule fields"/>
+    <img src="screenshot_04.png" alt="Light mode backend"/>
+    <img src="screenshot_05.png" alt="Dark mode backend"/>
+    <img src="screenshot_06.png" alt="Dark login page"/>
+    <img src="screenshot_07.png" alt="Dark POS"/>
+    <img src="screenshot_08.png" alt="Dark report preview"/>
+    <img src="screenshot_09.png" alt="Admin policy list"/>
+    <img src="screenshot_10.png" alt="Admin policy form"/>
+</div>
+
+</body>
+</html>

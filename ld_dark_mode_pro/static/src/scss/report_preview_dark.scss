@@ -1,0 +1,20 @@
+// Dark-friendly background for the report-preview iframe shell.
+// The inner report itself is kept light (reports are designed for print).
+
+html[data-ld-dark="1"] {
+    .o_report_iframe_wrapper,
+    .o_action_manager .o_report_iframe_wrapper {
+        background-color: var(--ld-dm-bg);
+    }
+
+    iframe.o_report_iframe {
+        background-color: #ffffff; // keep report content light
+    }
+
+    .o_report_preview_toolbar,
+    .o_report_preview_header {
+        background-color: var(--ld-dm-card-bg);
+        color: var(--ld-dm-fg);
+        border-color: var(--ld-dm-border);
+    }
+}

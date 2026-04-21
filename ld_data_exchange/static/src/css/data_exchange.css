@@ -1,0 +1,26 @@
+/* ld_data_exchange - Data Exchange Suite styles */
+
+/* Cog menu copy items */
+.o_data_exchange_copy_menu {
+    cursor: pointer;
+}
+
+/* Clipboard flash animation used by copy_url_patch.js (outline handled inline,
+   but provide a utility class for any future use). */
+.o_data_exchange_flash {
+    outline: 2px solid #28a745 !important;
+    outline-offset: 1px;
+    transition: outline 0.3s ease;
+}
+
+/* Breadcrumb copy hint: show a faint clipboard icon on Ctrl-hover */
+.o_breadcrumb .breadcrumb-item:hover > a::after,
+.o_breadcrumb .o_last_breadcrumb_item:hover > span::after {
+    content: "\f0ea";  /* fa-clipboard */
+    font-family: FontAwesome, sans-serif;
+    font-size: 0.7em;
+    margin-left: 0.35em;
+    opacity: 0.35;
+    vertical-align: middle;
+    pointer-events: none;
+}

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_whatsapp_template_list" model="ir.ui.view">
+        <field name="name">whatsapp.template.list</field>
+        <field name="model">whatsapp.template</field>
+        <field name="arch" type="xml">
+            <list string="WhatsApp Templates">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="category"/>
+                <field name="model_id"/>
+                <field name="is_default"/>
+                <field name="active"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_whatsapp_template_form" model="ir.ui.view">
+        <field name="name">whatsapp.template.form</field>
+        <field name="model">whatsapp.template</field>
+        <field name="arch" type="xml">
+            <form string="WhatsApp Template">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1><field name="name" placeholder="e.g. Konfirmasi Order"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="category"/>
+                            <field name="model_id" options="{'no_create': True}"/>
+                            <field name="is_default"/>
+                        </group>
+                        <group>
+                            <field name="sequence"/>
+                            <field name="active"/>
+                            <field name="user_ids" widget="many2many_tags"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Body">
+                            <field name="body" placeholder="Halo {{partner_name}}, ..."/>
+                            <p class="text-muted">
+                                Placeholders: <code>{{partner_name}}</code>,
+                                <code>{{partner_phone}}</code>,
+                                <code>{{record_name}}</code>,
+                                <code>{{invoice_number}}</code>,
+                                <code>{{amount}}</code>,
+                                <code>{{due_date}}</code>,
+                                <code>{{company_name}}</code>,
+                                <code>{{user_name}}</code>.
+                            </p>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_whatsapp_template_search" model="ir.ui.view">
+        <field name="name">whatsapp.template.search</field>
+        <field name="model">whatsapp.template</field>
+        <field name="arch" type="xml">
+            <search string="WhatsApp Templates">
+                <field name="name"/>
+                <field name="model_id"/>
+                <filter string="Active" name="active" domain="[('active','=',True)]"/>
+                <filter string="Default" name="default" domain="[('is_default','=',True)]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Category" name="by_category" context="{'group_by':'category'}"/>
+                    <filter string="Model" name="by_model" context="{'group_by':'model_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_whatsapp_template" model="ir.actions.act_window">
+        <field name="name">WhatsApp Templates</field>
+        <field name="res_model">whatsapp.template</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_whatsapp_template_search"/>
+    </record>
+
+</odoo>

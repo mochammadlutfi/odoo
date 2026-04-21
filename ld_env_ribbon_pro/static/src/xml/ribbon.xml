@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="ld_env_ribbon_pro.Ribbon">
+        <div
+            t-if="config.enabled and !state.dismissed"
+            t-att-class="ribbonClasses"
+            t-att-style="ribbonStyle"
+        >
+            <span class="ribbon-text" t-esc="config.text"/>
+            <button
+                t-if="config.user_dismissable"
+                class="ribbon-dismiss"
+                t-on-click="dismiss"
+                title="Dismiss for today"
+            >×</button>
+        </div>
+    </t>
+</templates>

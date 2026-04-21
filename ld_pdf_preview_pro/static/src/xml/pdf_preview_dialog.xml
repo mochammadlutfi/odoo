@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="ld_pdf_preview_pro.PDFPreviewDialog">
+        <Dialog size="'xl'" footer="false" withBodyPadding="false"
+                title="props.title">
+            <div class="o-PDFPreview d-flex flex-column h-100"
+                 t-att-class="{ 'o-PDFPreview--dark': state.darkMode }">
+
+                <!-- Toolbar -->
+                <div class="o-PDFPreview-toolbar d-flex align-items-center gap-2 px-3 flex-shrink-0">
+
+                    <!-- Navigation -->
+                    <div class="d-flex align-items-center gap-1">
+                        <button class="o-PDFPreview-iconBtn"
+                                t-on-click="prevPage"
+                                t-att-disabled="state.currentPage &lt;= 1 or state.loading or state.rendering"
+                                title="Halaman sebelumnya (←)">
+                            <i class="fa fa-chevron-left fa-sm"/>
+                        </button>
+
+                        <span class="o-PDFPreview-pageInfo">
+                            <t t-if="state.loading">–</t>
+                            <t t-elif="state.error">!</t>
+                            <t t-else="" t-esc="pageLabel"/>
+                        </span>
+
+                        <button class="o-PDFPreview-iconBtn"
+                                t-on-click="nextPage"
+                                t-att-disabled="state.currentPage >= state.totalPages or state.loading or state.rendering"
+                                title="Halaman berikutnya (→)">
+                            <i class="fa fa-chevron-right fa-sm"/>
+                        </button>
+                    </div>
+
+                    <div class="o-PDFPreview-divider"/>
+
+                    <!-- Zoom -->
+                    <div class="d-flex align-items-center gap-1">
+                        <button class="o-PDFPreview-iconBtn"
+                                t-on-click="zoomOut"
+                                t-att-disabled="state.scale &lt;= 0.25 or state.loading"
+                                title="Perkecil (-)">
+                            <i class="fa fa-minus fa-sm"/>
+                        </button>
+                        <span class="o-PDFPreview-zoomLabel" t-esc="zoomLabel"/>
+                        <button class="o-PDFPreview-iconBtn"
+                                t-on-click="zoomIn"
+                                t-att-disabled="state.scale >= 3.0 or state.loading"
+                                title="Perbesar (+)">
+                            <i class="fa fa-plus fa-sm"/>
+                        </button>
+                    </div>
+
+                    <div class="flex-grow-1"/>
+
+                    <!-- Actions -->
+                    <div class="d-flex align-items-center gap-2">
+                        <button class="btn btn-sm btn-outline-secondary"
+                                t-on-click="printPDF"
+                                t-att-disabled="state.loading or !!state.error"
+                                title="Cetak">
+                            <i class="fa fa-print me-1"/>
+                            <span class="d-none d-md-inline">Cetak</span>
+                        </button>
+                        <a class="btn btn-sm btn-primary"
+                           t-att-href="props.downloadUrl"
+                           download=""
+                           title="Unduh">
+                            <i class="fa fa-download me-1"/>
+                            <span class="d-none d-md-inline">Unduh</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Body -->
+                <div t-ref="pdfBody"
+                     class="o-PDFPreview-body flex-grow-1 overflow-auto">
+
+                    <!-- Loading -->
+                    <div t-if="state.loading"
+                         class="d-flex flex-column align-items-center justify-content-center w-100 h-100 gap-3">
+                        <div class="o-PDFPreview-spinner">
+                            <i class="fa fa-circle-o-notch fa-spin fa-2x"/>
+                        </div>
+                        <span class="o-PDFPreview-loadingText">Memuat PDF...</span>
+                    </div>
+
+                    <!-- Error -->
+                    <div t-elif="state.error"
+                         class="d-flex flex-column align-items-center justify-content-center w-100 h-100 gap-3">
+                        <i class="fa fa-exclamation-circle fa-3x o-PDFPreview-errorIcon"/>
+                        <p class="mb-0 o-PDFPreview-errorText" t-esc="state.error"/>
+                    </div>
+
+                    <!-- Canvas wrapper -->
+                    <div t-else="" class="o-PDFPreview-canvasWrap">
+                        <canvas t-ref="pdfCanvas" class="o-PDFPreview-canvas"/>
+                    </div>
+                </div>
+
+                <!-- Mobile zoom bar -->
+                <div t-if="!state.loading and !state.error"
+                     class="o-PDFPreview-mobileZoom d-flex d-sm-none align-items-center justify-content-center gap-3 flex-shrink-0">
+                    <button class="o-PDFPreview-iconBtn"
+                            t-on-click="zoomOut"
+                            t-att-disabled="state.scale &lt;= 0.25 or state.loading">
+                        <i class="fa fa-minus fa-sm"/>
+                    </button>
+                    <span class="o-PDFPreview-zoomLabel" t-esc="zoomLabel"/>
+                    <button class="o-PDFPreview-iconBtn"
+                            t-on-click="zoomIn"
+                            t-att-disabled="state.scale >= 3.0 or state.loading">
+                        <i class="fa fa-plus fa-sm"/>
+                    </button>
+                </div>
+
+            </div>
+        </Dialog>
+    </t>
+
+</templates>

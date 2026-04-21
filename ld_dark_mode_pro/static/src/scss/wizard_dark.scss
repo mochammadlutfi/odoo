@@ -1,0 +1,21 @@
+// Wizard / modal edge-case fixes that Odoo 18 built-in dark misses.
+// Keep selectors minimal to avoid breaking things that are already dark.
+
+html[data-ld-dark="1"] {
+    .o_technical_modal .modal-content,
+    .o_dialog_container .modal-content {
+        background-color: var(--ld-dm-card-bg);
+        color: var(--ld-dm-fg);
+        border-color: var(--ld-dm-border);
+    }
+
+    .o_technical_modal .modal-footer,
+    .o_dialog_container .modal-footer {
+        border-top-color: var(--ld-dm-border);
+    }
+
+    .o_technical_modal .modal-header,
+    .o_dialog_container .modal-header {
+        border-bottom-color: var(--ld-dm-border);
+    }
+}

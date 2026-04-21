@@ -1,0 +1,8 @@
+Replace this file with an actual 128x128 PNG at `icon.png`.
+
+Design hints:
+- Moon-sun hybrid or half-moon silhouette
+- Dark-mode-friendly palette (e.g. #1F1F23 background, #FFD166 accent)
+- Keep it minimal — Odoo apps.odoo.com listing scales down to 64x64
+
+See static/description/index.html for the listing page that references this icon.

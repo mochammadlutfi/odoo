@@ -1,0 +1,207 @@
+// ============================================================
+// PDF Preview Pro — Menggunakan variabel Bootstrap/Odoo theme
+// $primary, $border-color, $body-bg, $body-color, dll
+// ============================================================
+
+$icon-btn-size: 32px;
+$toolbar-height: 52px;
+
+.o-PDFPreview {
+    min-height: 0;
+    background: $gray-100;
+
+    // ── Toolbar ──────────────────────────────────────────────
+    &-toolbar {
+        background: $white;
+        border-bottom: 1px solid $border-color;
+        height: $toolbar-height;
+        min-height: $toolbar-height;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        position: relative;
+        z-index: 1;
+    }
+
+    &-divider {
+        width: 1px;
+        height: 20px;
+        background: $border-color;
+        margin: 0 4px;
+    }
+
+    // ── Page info & zoom label ────────────────────────────────
+    &-pageInfo {
+        font-size: 13px;
+        font-weight: 500;
+        color: $body-color;
+        min-width: 60px;
+        text-align: center;
+        letter-spacing: 0.01em;
+    }
+
+    &-zoomLabel {
+        font-size: 13px;
+        font-weight: 500;
+        color: $body-color;
+        min-width: 44px;
+        text-align: center;
+    }
+
+    // ── Icon button (nav, zoom) ───────────────────────────────
+    &-iconBtn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: $icon-btn-size;
+        height: $icon-btn-size;
+        border-radius: $border-radius;
+        border: none;
+        background: transparent;
+        color: $body-color;
+        cursor: pointer;
+        transition: background-color 0.15s, color 0.15s;
+        padding: 0;
+        line-height: 1;
+
+        &:hover:not(:disabled) {
+            background: $gray-100;
+            color: $headings-color;
+        }
+
+        &:disabled {
+            color: $text-muted;
+            cursor: not-allowed;
+        }
+    }
+
+    // ── Body ─────────────────────────────────────────────────
+    // max-height: viewport - dialog header (56px) - toolbar - footer margin
+    &-body {
+        background: $gray-200;
+        padding: 24px;
+        overflow-y: auto;
+        overflow-x: auto;
+        max-height: calc(90vh - #{$toolbar-height} - 68px);
+        min-height: 300px;
+    }
+
+    // ── Canvas wrapper & canvas ───────────────────────────────
+    &-canvasWrap {
+        display: flex;
+        justify-content: center;
+        min-height: 100%;
+    }
+
+    &-canvas {
+        display: block;
+        background: $white;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+        border-radius: 2px;
+    }
+
+    // ── Loading ───────────────────────────────────────────────
+    &-spinner {
+        color: $primary;
+    }
+
+    &-loadingText {
+        font-size: 14px;
+        color: $text-muted;
+    }
+
+    // ── Error ─────────────────────────────────────────────────
+    &-errorIcon {
+        color: $danger;
+    }
+
+    &-errorText {
+        font-size: 14px;
+        color: $body-color;
+        text-align: center;
+        max-width: 360px;
+    }
+
+    // ── Mobile zoom bar ───────────────────────────────────────
+    &-mobileZoom {
+        background: $white;
+        border-top: 1px solid $border-color;
+        height: 48px;
+        min-height: 48px;
+    }
+
+    // ── Dark mode ─────────────────────────────────────────────
+    &--dark {
+        background: $gray-900;
+
+        .o-PDFPreview-toolbar {
+            background: $gray-800;
+            border-color: $gray-700;
+        }
+
+        .o-PDFPreview-divider {
+            background: $gray-700;
+        }
+
+        .o-PDFPreview-pageInfo,
+        .o-PDFPreview-zoomLabel {
+            color: $gray-200;
+        }
+
+        .o-PDFPreview-iconBtn {
+            color: $gray-400;
+
+            &:hover:not(:disabled) {
+                background: $gray-700;
+                color: $gray-100;
+            }
+
+            &:disabled {
+                color: $gray-600;
+            }
+        }
+
+        .o-PDFPreview-body {
+            background: $gray-900;
+        }
+
+        .o-PDFPreview-canvas {
+            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        .o-PDFPreview-loadingText,
+        .o-PDFPreview-errorText {
+            color: $gray-400;
+        }
+
+        .o-PDFPreview-mobileZoom {
+            background: $gray-800;
+            border-color: $gray-700;
+        }
+    }
+}
+
+// ── Print ────────────────────────────────────────────────────
+@media print {
+    .o_main_navbar,
+    .o_action_manager > *:not(.o_dialog_container),
+    .o-mail-ChatterContainer,
+    .o_statusbar_status,
+    .o-PDFPreview-toolbar,
+    .o-PDFPreview-mobileZoom {
+        display: none !important;
+    }
+
+    .o-PDFPreview-body {
+        padding: 0 !important;
+        overflow: visible !important;
+        background: $white !important;
+    }
+
+    .o-PDFPreview-canvasWrap {
+        justify-content: flex-start;
+    }
+
+    .o-PDFPreview-canvas {
+        width: 100% !important;
+        box-shadow: none !important;
+    }
+}

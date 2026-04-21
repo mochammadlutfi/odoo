@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="ld_data_exchange.CopyListMenu">
+        <DropdownItem class="'o_data_exchange_copy_menu'" onSelected.bind="() => this.copyToClipboard('tsv')">
+            <i class="fa fa-fw fa-clipboard me-1"/>Copy as TSV
+        </DropdownItem>
+        <DropdownItem class="'o_data_exchange_copy_menu'" onSelected.bind="() => this.copyToClipboard('csv')">
+            <i class="fa fa-fw fa-clipboard me-1"/>Copy as CSV
+        </DropdownItem>
+        <DropdownItem class="'o_data_exchange_copy_menu'" onSelected.bind="() => this.copyToClipboard('markdown')">
+            <i class="fa fa-fw fa-clipboard me-1"/>Copy as Markdown
+        </DropdownItem>
+        <DropdownItem class="'o_data_exchange_copy_menu'" onSelected.bind="() => this.copyToClipboard('json')">
+            <i class="fa fa-fw fa-clipboard me-1"/>Copy as JSON
+        </DropdownItem>
+    </t>
+
+</templates>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--
+        Inject an anti-flicker early script + inline style into EVERY page's
+        <head>, before any asset bundle. Reads the `color_scheme` cookie and
+        `localStorage.ldDarkMode` (for pre-login auto/schedule decisions),
+        applies a minimal dark background before first paint if needed, and
+        updates the cookie (with a single-reload guard) when the client-side
+        resolution disagrees with the cookie.
+
+        Inheriting `web.layout` (non-primary) covers backend webclient, login,
+        and all frontend pages in one shot.
+    -->
+    <template id="layout_inherit_ld_dark_mode_pro"
+              inherit_id="web.layout"
+              name="Dark Mode Early Script">
+        <xpath expr="//head/script[@id='web.layout.odooscript']" position="before">
+            <style id="ld_dm_early_style">
+                html[data-ld-dark="1"] {
+                    background-color: #1F1F23 !important;
+                    color: #E6E6E6 !important;
+                }
+                html[data-ld-dark="1"] body {
+                    background-color: #1F1F23 !important;
+                    color: #E6E6E6 !important;
+                }
+            </style>
+            <script id="ld_dm_early_script" type="text/javascript">
+(function () {
+    try {
+        var KEY = 'ldDarkMode';
+        var RELOAD_FLAG = 'ldDarkReloaded';
+        var cookie = document.cookie.split(';').map(function (c) {
+            return c.trim();
+        });
+        var cookieMode = null;
+        cookie.forEach(function (c) {
+            if (c.indexOf('color_scheme=') === 0) {
+                cookieMode = c.split('=')[1];
+            }
+        });
+        var raw = null;
+        try { raw = window.localStorage.getItem(KEY); } catch (e) {}
+        var stored = null;
+        try { stored = raw ? JSON.parse(raw) : null; } catch (e) {}
+        var VALID = ['light', 'dark', 'auto', 'schedule'];
+        var pref = (stored &amp;&amp; VALID.indexOf(stored.mode) &gt;= 0) ? stored.mode : 'auto';
+        function clampHour(v, fallback) {
+            if (typeof v !== 'number' || isNaN(v) || v &lt; 0 || v &gt;= 24) {
+                return fallback;
+            }
+            return v;
+        }
+        var start = clampHour(stored &amp;&amp; stored.scheduleStart, 19);
+        var end = clampHour(stored &amp;&amp; stored.scheduleEnd, 7);
+        var effective = 'light';
+        if (pref === 'dark') { effective = 'dark'; }
+        else if (pref === 'light') { effective = 'light'; }
+        else if (pref === 'auto') {
+            var mq = window.matchMedia &amp;&amp; window.matchMedia('(prefers-color-scheme: dark)');
+            effective = (mq &amp;&amp; mq.matches) ? 'dark' : 'light';
+        }
+        else if (pref === 'schedule') {
+            var now = new Date();
+            var h = now.getHours() + now.getMinutes() / 60;
+            var inRange = (start === end) ? false
+                : (start &lt; end ? (h &gt;= start &amp;&amp; h &lt; end)
+                              : (h &gt;= start || h &lt; end));
+            effective = inRange ? 'dark' : 'light';
+        }
+        if (effective === 'dark') {
+            document.documentElement.setAttribute('data-ld-dark', '1');
+        } else {
+            document.documentElement.removeAttribute('data-ld-dark');
+        }
+        if (cookieMode !== effective) {
+            var reloaded = false;
+            try { reloaded = window.sessionStorage.getItem(RELOAD_FLAG) === '1'; } catch (e) {}
+            var secureFlag = window.location.protocol === 'https:' ? '; Secure' : '';
+            document.cookie = 'color_scheme=' + effective +
+                '; path=/; max-age=' + (60 * 60 * 24 * 365) + '; SameSite=Lax' + secureFlag;
+            if (!reloaded) {
+                try { window.sessionStorage.setItem(RELOAD_FLAG, '1'); } catch (e) {}
+                window.location.reload();
+            }
+        } else {
+            try { window.sessionStorage.removeItem(RELOAD_FLAG); } catch (e) {}
+        }
+    } catch (err) {
+        // Never break page load because of dark mode.
+    }
+})();
+            </script>
+        </xpath>
+    </template>
+</odoo>

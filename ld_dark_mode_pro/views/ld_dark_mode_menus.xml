@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_ld_dark_mode_config_root"
+              name="Dark Mode"
+              parent="base.menu_administration"
+              sequence="80"
+              groups="base.group_system"/>
+
+    <menuitem id="menu_ld_dark_mode_config"
+              name="Dark Mode Policies"
+              parent="menu_ld_dark_mode_config_root"
+              action="action_ld_dark_mode_config"
+              sequence="10"
+              groups="base.group_system"/>
+</odoo>

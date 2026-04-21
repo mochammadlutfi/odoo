@@ -1,0 +1,30 @@
+// CSS Custom Properties for Dark Mode Pro
+//
+// Scoped to html[data-ld-dark="1"] — never overrides Bootstrap/Odoo
+// variables globally. We use these for our own additions (login page,
+// POS tweaks, report preview shell).
+
+:root {
+    --ld-dm-bg: #ffffff;
+    --ld-dm-fg: #262a36;
+    --ld-dm-border: #d6d8dc;
+    --ld-dm-muted: #6b7280;
+    --ld-dm-card-bg: #ffffff;
+    --ld-dm-link: #0d6efd;
+    --ld-dm-transition-ms: 300ms;
+}
+
+html[data-ld-dark="1"] {
+    --ld-dm-bg: #1f1f23;
+    --ld-dm-fg: #e6e6e6;
+    --ld-dm-border: #343a46;
+    --ld-dm-muted: #9aa0a6;
+    --ld-dm-card-bg: #262a36;
+    --ld-dm-link: #6ea8fe;
+}
+
+.o_ld_dm_transition {
+    transition:
+        background-color var(--ld-dm-transition-ms) ease,
+        color var(--ld-dm-transition-ms) ease;
+}

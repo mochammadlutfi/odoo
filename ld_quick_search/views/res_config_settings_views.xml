@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_config_settings_view_form_quick_search" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.ld_quick_search</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="inside">
+                <app data-string="Quick Search" string="Quick Search" name="ld_quick_search"
+                     groups="base.group_system">
+                    <block title="Quick Search (Ctrl+K)"
+                           name="ld_quick_search_block">
+                        <setting id="quick_search_shortcut_setting"
+                                 string="Keyboard Shortcut"
+                                 help="Shortcut to open the palette. Default: ctrl+k.">
+                            <field name="quick_search_shortcut"/>
+                        </setting>
+                        <setting id="quick_search_record_limit_setting"
+                                 string="Record Results Limit"
+                                 help="How many records to return per model (1-50).">
+                            <field name="quick_search_record_limit"/>
+                        </setting>
+                        <setting id="quick_search_whitelist_setting"
+                                 string="Whitelist Models"
+                                 help="Comma-separated. If set, only these models are searchable.">
+                            <field name="quick_search_whitelist_models"/>
+                        </setting>
+                        <setting id="quick_search_blacklist_setting"
+                                 string="Blacklist Models"
+                                 help="Comma-separated models excluded from record search.">
+                            <field name="quick_search_blacklist_models"/>
+                        </setting>
+                    </block>
+                </app>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

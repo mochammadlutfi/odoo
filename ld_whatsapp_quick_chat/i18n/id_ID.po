@@ -1,0 +1,58 @@
+# Indonesian translation for ld_whatsapp_quick_chat
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Language: id\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "Chat WA"
+msgstr "Chat WA"
+
+msgid "Send WhatsApp"
+msgstr "Kirim WhatsApp"
+
+msgid "Send WhatsApp Broadcast"
+msgstr "Kirim WhatsApp Broadcast"
+
+msgid "WhatsApp Templates"
+msgstr "Template WhatsApp"
+
+msgid "Message Log"
+msgstr "Log Pesan"
+
+msgid "Phone number is empty or invalid for WhatsApp. Expected format: +62 812..., 0812..., or 812..."
+msgstr "Nomor telepon kosong atau tidak valid untuk WhatsApp. Format: +62 812..., 0812..., atau 812..."
+
+msgid "Customer has no valid WhatsApp phone number."
+msgstr "Pelanggan tidak memiliki nomor WhatsApp yang valid."
+
+msgid "Vendor has no valid WhatsApp phone number."
+msgstr "Vendor tidak memiliki nomor WhatsApp yang valid."
+
+msgid "Partner has no valid WhatsApp phone number."
+msgstr "Partner tidak memiliki nomor WhatsApp yang valid."
+
+msgid "No valid WhatsApp phone on this lead or its partner."
+msgstr "Tidak ada nomor WhatsApp yang valid pada lead ini atau partner-nya."
+
+msgid "No selected partner has a valid WhatsApp phone number."
+msgstr "Tidak ada partner terpilih yang memiliki nomor WhatsApp valid."
+
+msgid "No partner has a valid WhatsApp phone number."
+msgstr "Tidak ada partner dengan nomor WhatsApp yang valid."
+
+msgid "Phone number is not valid."
+msgstr "Nomor telepon tidak valid."
+
+msgid "Please pick a template."
+msgstr "Silakan pilih template."
+
+msgid "Please set a customer first."
+msgstr "Silakan set customer terlebih dahulu."
+
+msgid "Please set a vendor first."
+msgstr "Silakan set vendor terlebih dahulu."

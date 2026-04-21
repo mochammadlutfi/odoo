@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Data Exchange Suite</title>
+    <style>
+        body { font-family: sans-serif; max-width: 800px; margin: 0 auto; padding: 1rem; }
+        h1 { color: #875a7b; }
+        h2 { color: #555; border-bottom: 1px solid #ddd; padding-bottom: 4px; }
+        ul { padding-left: 1.2rem; }
+        code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+    <h1>Data Exchange Suite</h1>
+    <p>
+        Streamline data exchange between Odoo and external tools like Excel, Google Sheets,
+        Notion, or Markdown editors. All clipboard operations work entirely in-browser
+        with no server calls.
+    </p>
+
+    <h2>Features</h2>
+    <ul>
+        <li><strong>Copy list data</strong> &mdash; Adds Copy items to the cog menu of every list view.
+            Supports <code>TSV</code>, <code>CSV</code>, <code>Markdown Table</code>, and <code>JSON</code> formats.
+            If rows are selected, only those rows are copied; otherwise all visible rows are copied.</li>
+        <li><strong>Copy record URL</strong> &mdash; <code>Ctrl+click</code> (or <code>Cmd+click</code> on Mac)
+            any breadcrumb item to copy the current page URL to the clipboard.</li>
+        <li><strong>Double-click field copy</strong> &mdash; Double-click any read-only field value in a
+            form view to instantly copy its text. A brief green flash confirms the copy.</li>
+    </ul>
+
+    <h2>Configuration</h2>
+    <p>Go to <strong>Settings &rsaquo; Data Exchange</strong> to:</p>
+    <ul>
+        <li>Enable or disable the double-click copy feature.</li>
+        <li>Set the default copy format for list views.</li>
+    </ul>
+
+    <h2>License</h2>
+    <p>LGPL-3 &mdash; Free to use and modify.</p>
+</body>
+</html>
