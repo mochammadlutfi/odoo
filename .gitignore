@@ -28,3 +28,7 @@ sessions/
 .env
 .venv/
 venv/
+
+# Internal docs (PRD, implementation plans, AI prompts) — NEVER publish
+docs/
+**/docs/
