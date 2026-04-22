@@ -153,16 +153,41 @@
                 top-right corner of the favicon. One glance at the browser tab tells
                 you exactly which environment you are in.
             </p>
-            <p style="font-size: 15px; color: #334155; line-height: 1.7; margin-bottom: 24px;">
-                The badge color is synced with your ribbon configuration —
-                no duplicate setup required.
+            <p style="font-size: 15px; color: #334155; line-height: 1.7; margin-bottom: 16px;">
+                Works in two modes — use whichever fits your setup:
             </p>
+
+            <div style="display: flex; gap: 12px; margin-bottom: 24px;">
+                <div style="flex: 1; background: #f8fafc; border: 1px solid #e2e8f0;
+                            border-radius: 6px; padding: 14px;">
+                    <p style="font-size: 13px; font-weight: 700; color: #714B67;
+                               text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 6px;">
+                        Manual
+                    </p>
+                    <p style="font-size: 13px; color: #475569; margin: 0; line-height: 1.6;">
+                        Pick the environment directly from Company Settings.
+                        <strong>No other module required.</strong>
+                    </p>
+                </div>
+                <div style="flex: 1; background: #f8fafc; border: 1px solid #e2e8f0;
+                            border-radius: 6px; padding: 14px;">
+                    <p style="font-size: 13px; font-weight: 700; color: #714B67;
+                               text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 6px;">
+                        Auto
+                    </p>
+                    <p style="font-size: 13px; color: #475569; margin: 0; line-height: 1.6;">
+                        Badge color follows your
+                        <strong>Environment Ribbon Pro</strong> configuration automatically.
+                        No duplicate setup.
+                    </p>
+                </div>
+            </div>
 
             <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
                 <thead>
                     <tr style="background-color: #714B67; color: #fff;">
                         <th style="padding: 10px 14px; text-align: left;">Environment</th>
-                        <th style="padding: 10px 14px; text-align: left;">Badge</th>
+                        <th style="padding: 10px 14px; text-align: left;">Badge Color</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -178,9 +203,15 @@
                         <td style="padding: 10px 14px; font-weight: 600; color: #1e293b;">uat</td>
                         <td style="padding: 10px 14px; color: #7c3aed; font-weight: 600;">Purple dot</td>
                     </tr>
-                    <tr>
+                    <tr style="border-bottom: 1px solid #e2e8f0; background-color: #f8fafc;">
                         <td style="padding: 10px 14px; font-weight: 600; color: #1e293b;">dev</td>
                         <td style="padding: 10px 14px; color: #2563eb; font-weight: 600;">Blue dot</td>
+                    </tr>
+                    <tr style="background-color: #faf5ff;">
+                        <td style="padding: 10px 14px; font-weight: 600; color: #714B67;">
+                            auto <span style="font-weight: 400; font-size: 12px; color: #94a3b8;">(requires Ribbon Pro)</span>
+                        </td>
+                        <td style="padding: 10px 14px; color: #714B67; font-weight: 600;">Syncs from ribbon config</td>
                     </tr>
                 </tbody>
             </table>
@@ -329,60 +360,6 @@
                 <code>/ld_favicon/android-chrome-192x192.png</code><br/>
                 <code>/ld_favicon/android-chrome-512x512.png</code><br/>
                 <code>/ld_favicon/site.webmanifest</code>
-            </p>
-        </div>
-    </div>
-</section>
-
-<!-- Roadmap -->
-<section class="oe_container">
-    <div class="oe_row oe_spaced">
-        <div class="oe_span12" style="text-align: center;">
-            <h2 class="oe_slogan" style="color: #714B67;">Roadmap</h2>
-        </div>
-
-        <div class="oe_span3" style="padding: 16px; border-left: 3px solid #714B67;">
-            <p style="font-size: 11px; font-weight: 700; color: #714B67;
-                      text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px;">
-                v1.0 &mdash; Available Now
-            </p>
-            <p style="font-weight: 700; color: #1e293b; margin-bottom: 6px;">Full Feature Release</p>
-            <p style="font-size: 13px; color: #64748b; margin: 0; line-height: 1.6;">
-                Auto-generate, multi-company, environment badge,
-                Apple &amp; Android icons, web manifest, cache invalidation.
-            </p>
-        </div>
-
-        <div class="oe_span3" style="padding: 16px; border-left: 3px solid #cbd5e1;">
-            <p style="font-size: 11px; font-weight: 700; color: #94a3b8;
-                      text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px;">
-                v1.1 &mdash; Planned
-            </p>
-            <p style="font-weight: 700; color: #1e293b; margin-bottom: 6px;">Live Preview Widget</p>
-            <p style="font-size: 13px; color: #64748b; margin: 0; line-height: 1.6;">
-                Preview all favicon sizes inside Settings before saving.
-            </p>
-        </div>
-
-        <div class="oe_span3" style="padding: 16px; border-left: 3px solid #cbd5e1;">
-            <p style="font-size: 11px; font-weight: 700; color: #94a3b8;
-                      text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px;">
-                v1.2 &mdash; Planned
-            </p>
-            <p style="font-weight: 700; color: #1e293b; margin-bottom: 6px;">Per-Outlet Favicon</p>
-            <p style="font-size: 13px; color: #64748b; margin: 0; line-height: 1.6;">
-                Individual favicon per POS outlet for multi-outlet setups.
-            </p>
-        </div>
-
-        <div class="oe_span3" style="padding: 16px; border-left: 3px solid #cbd5e1;">
-            <p style="font-size: 11px; font-weight: 700; color: #94a3b8;
-                      text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px;">
-                v2.0 &mdash; Planned
-            </p>
-            <p style="font-weight: 700; color: #1e293b; margin-bottom: 6px;">Favicon Gallery</p>
-            <p style="font-size: 13px; color: #64748b; margin: 0; line-height: 1.6;">
-                Industry-specific favicon template presets — pick and apply in one click.
             </p>
         </div>
     </div>

@@ -23,11 +23,27 @@ class ResCompany(models.Model):
     favicon_auto_generated = fields.Boolean(string='Auto-generate from Logo', default=True)
     favicon_environment_badge = fields.Selection([
         ('none', 'None'),
+        ('dev', 'Development (Blue)'),
+        ('staging', 'Staging (Amber)'),
+        ('uat', 'UAT (Purple)'),
+        ('production', 'Production (Red)'),
         ('auto', 'Auto (sync with ribbon config)'),
-    ], string='Environment Badge', default='auto')
+    ], string='Environment Badge', default='none')
     apple_touch_icon = fields.Binary(string='Apple Touch Icon (180x180)', attachment=True)
     android_icon_192 = fields.Binary(string='Android Icon 192x192', attachment=True)
     android_icon_512 = fields.Binary(string='Android Icon 512x512', attachment=True)
+
+    def _resolve_badge_color(self):
+        """Return RGB tuple for the badge, or None if no badge."""
+        mode = self.favicon_environment_badge
+        if not mode or mode == 'none':
+            return None
+        if mode == 'auto':
+            env_key = self.env['ir.config_parameter'].sudo().get_param(
+                'ld_env_ribbon_pro.ribbon_environment', False
+            )
+            return BADGE_COLORS.get(env_key)
+        return BADGE_COLORS.get(mode)
 
     @api.depends('favicon')
     def _compute_favicon_version(self):
@@ -52,11 +68,7 @@ class ResCompany(models.Model):
 
             img = self._crop_to_square(img)
 
-            badge_color = None
-            if company.favicon_environment_badge == 'auto':
-                env_param = self.env['ir.config_parameter'].sudo().get_param('ribbon_environment', False)
-                if env_param:
-                    badge_color = BADGE_COLORS.get(env_param)
+            badge_color = company._resolve_badge_color()
 
             # Generate favicon.ico (16x16 + 32x32)
             ico_img = img.copy().resize((32, 32), Image.LANCZOS)
@@ -125,11 +137,7 @@ class ResCompany(models.Model):
         img = Image.open(BytesIO(logo_data)).convert('RGBA')
         img = company._crop_to_square(img)
 
-        badge_color = None
-        if company.favicon_environment_badge == 'auto':
-            env_param = self.env['ir.config_parameter'].sudo().get_param('ribbon_environment', False)
-            if env_param:
-                badge_color = BADGE_COLORS.get(env_param)
+        badge_color = company._resolve_badge_color()
 
         previews = {}
         for size in [16, 32, 180]:

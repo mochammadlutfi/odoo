@@ -13,78 +13,118 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#. module: ld_web_favicon_pro
 #. model fields
 msgid "Favicon"
 msgstr "Favicon"
 
+#. module: ld_web_favicon_pro
 msgid "Auto-generate from Logo"
 msgstr "Generate Otomatis dari Logo"
 
+#. module: ld_web_favicon_pro
 msgid "Environment Badge"
-msgstr "Lencana Lingkungan"
+msgstr "Lencana Environment"
 
+#. module: ld_web_favicon_pro
 msgid "Apple Touch Icon (180x180)"
 msgstr "Apple Touch Icon (180x180)"
 
+#. module: ld_web_favicon_pro
 msgid "Android Icon 192x192"
 msgstr "Ikon Android 192x192"
 
+#. module: ld_web_favicon_pro
 msgid "Android Icon 512x512"
 msgstr "Ikon Android 512x512"
 
+#. module: ld_web_favicon_pro
 #. view strings
 msgid "Favicon Settings"
 msgstr "Pengaturan Favicon"
 
+#. module: ld_web_favicon_pro
 msgid "Manual Favicon"
 msgstr "Favicon Manual"
 
+#. module: ld_web_favicon_pro
 msgid "Generated Icons (read-only)"
 msgstr "Ikon Hasil Generate (hanya baca)"
 
+#. module: ld_web_favicon_pro
 msgid "Apple Touch Icon (180×180)"
 msgstr "Apple Touch Icon (180×180)"
 
+#. module: ld_web_favicon_pro
 msgid "Android Chrome 192×192"
 msgstr "Android Chrome 192×192"
 
+#. module: ld_web_favicon_pro
 msgid "Android Chrome 512×512"
 msgstr "Android Chrome 512×512"
 
+#. module: ld_web_favicon_pro
 msgid "Generate Favicon from Logo"
 msgstr "Generate Favicon dari Logo"
 
+#. module: ld_web_favicon_pro
 msgid "Clear Favicon Cache"
 msgstr "Hapus Cache Favicon"
 
+#. module: ld_web_favicon_pro
 msgid "Available URLs after generation:"
 msgstr "URL tersedia setelah generate:"
 
+#. module: ld_web_favicon_pro
 #. Python messages
 msgid "Pillow library is required. Install with: pip install Pillow"
 msgstr "Library Pillow diperlukan. Install dengan: pip install Pillow"
 
+#. module: ld_web_favicon_pro
 msgid "No company logo found"
 msgstr "Logo perusahaan tidak ditemukan"
 
+#. module: ld_web_favicon_pro
 msgid "Pillow not installed"
 msgstr "Pillow belum terinstall"
 
+#. module: ld_web_favicon_pro
 msgid "Favicon Generated"
 msgstr "Favicon Berhasil Dibuat"
 
+#. module: ld_web_favicon_pro
 msgid "Favicon successfully generated from company logo."
 msgstr "Favicon berhasil di-generate dari logo perusahaan."
 
+#. module: ld_web_favicon_pro
 msgid "Favicon Cleared"
 msgstr "Favicon Dihapus"
 
+#. module: ld_web_favicon_pro
 msgid "Favicon cache cleared. Browser will reload the new favicon."
 msgstr "Cache favicon dihapus. Browser akan memuat favicon baru."
 
-#. selection values
+#. module: ld_web_favicon_pro
+#. selection: favicon_environment_badge
 msgid "None"
 msgstr "Tidak Ada"
 
+#. module: ld_web_favicon_pro
+msgid "Development (Blue)"
+msgstr "Development (Biru)"
+
+#. module: ld_web_favicon_pro
+msgid "Staging (Amber)"
+msgstr "Staging (Amber)"
+
+#. module: ld_web_favicon_pro
+msgid "UAT (Purple)"
+msgstr "UAT (Ungu)"
+
+#. module: ld_web_favicon_pro
+msgid "Production (Red)"
+msgstr "Production (Merah)"
+
+#. module: ld_web_favicon_pro
 msgid "Auto (sync with ribbon config)"
 msgstr "Otomatis (sinkron dengan konfigurasi ribbon)"
