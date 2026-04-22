@@ -33,7 +33,10 @@
             'ld_web_favicon_pro/static/src/js/favicon_loader.js',
         ],
     },
-    'images': ['static/description/icon.png'],
+    'images': [
+        'static/description/icon.png',
+        'static/description/main_screenshot.jpeg',
+    ],
     'installable': True,
     'auto_install': False,
     'application': False,
