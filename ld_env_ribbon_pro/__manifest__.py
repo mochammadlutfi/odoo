@@ -5,16 +5,16 @@
     'description': '''
         Environment Ribbon Pro for Odoo 18
         ===================================
-        - Config via Settings UI (tidak perlu edit config file)
-        - 6 preset warna: DEV/STG/UAT/PROD/DEMO/TEST
-        - Per-user dismiss (simpan di localStorage, muncul lagi besok)
-        - Auto-detect dari environment variable ODOO_ENV
-        - 4 posisi ribbon (top-right, top-left, bottom-right, diagonal)
-        - Audit log akses production
-        - Bahasa Indonesia tersedia
+        - Configure via Settings UI (no config file editing needed)
+        - 6 preset color environments: DEV / STAGING / UAT / PRODUCTION / DEMO / TEST
+        - Per-user dismiss (stored in localStorage, reappears the next day)
+        - Auto-detect via the ODOO_ENV environment variable
+        - 4 ribbon styles (Bar / Corner / Vertical / Banner) x 4 positions
+        - Production access audit log
+        - Indonesian translation included
     ''',
     'author': 'Mochammad Lutfi',
-    'website': '',
+    'website': 'https://lutfi.dev',
     'category': 'Technical',
     'license': 'LGPL-3',
     'depends': ['base', 'web'],
@@ -30,7 +30,10 @@
             'ld_env_ribbon_pro/static/src/xml/ribbon.xml',
         ],
     },
-    'images': ['static/description/icon.png'],
+    'images': [
+        'static/description/icon.png',
+        'static/description/main_screenshot.png',
+    ],
     'installable': True,
     'auto_install': False,
     'application': False,

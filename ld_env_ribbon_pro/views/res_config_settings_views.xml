@@ -10,7 +10,7 @@
 
                     <block title="Environment Ribbon" name="ribbon_main_setting_container">
                         <setting string="Enable Ribbon" help="Show a visual environment indicator on all backend pages.">
-                            <field name="ribbon_enabled" widget="boolean_toggle"/>
+                            <field name="ribbon_enabled"/>
                         </setting>
 
                         <setting string="ODOO_ENV Variable" invisible="not ribbon_enabled"
@@ -56,12 +56,12 @@
 
                         <setting string="Allow Dismiss"
                                  help="Users can hide the ribbon for the day. Automatically disabled for Production environments.">
-                            <field name="ribbon_user_dismissable" widget="boolean_toggle"/>
+                            <field name="ribbon_user_dismissable"/>
                         </setting>
 
                         <setting string="Audit Production Access"
                                  help="Log every session that accesses the Production environment.">
-                            <field name="ribbon_audit_production_access" widget="boolean_toggle"/>
+                            <field name="ribbon_audit_production_access"/>
                             <div invisible="not ribbon_audit_production_access" class="mt8">
                                 <button name="%(ld_env_ribbon_pro.action_env_ribbon_audit_log)d"
                                         type="action"
