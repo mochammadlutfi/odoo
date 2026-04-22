@@ -55,9 +55,9 @@ class ResConfigSettings(models.TransientModel):
     )
     ribbon_style = fields.Selection(
         selection=[
-            ('bar', 'Bar (Lurus)'),
-            ('corner', 'Corner (Sudut Diagonal)'),
-            ('vertical', 'Vertical (Menyamping)'),
+            ('bar', 'Bar (Straight)'),
+            ('corner', 'Corner (Diagonal)'),
+            ('vertical', 'Vertical (Sideways)'),
             ('banner', 'Banner (Full Width)'),
         ],
         string='Ribbon Style',

@@ -14,153 +14,190 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. view: setting strings
+#. module: ld_env_ribbon_pro
+#. model fields
 msgid "Enable Ribbon"
 msgstr "Aktifkan Ribbon"
 
+#. module: ld_env_ribbon_pro
 msgid "Enable Environment Ribbon"
 msgstr "Aktifkan Environment Ribbon"
 
+#. module: ld_env_ribbon_pro
 msgid "Environment Type"
 msgstr "Tipe Environment"
 
+#. module: ld_env_ribbon_pro
 msgid "Custom Text"
 msgstr "Teks Kustom"
 
+#. module: ld_env_ribbon_pro
 msgid "Ribbon Style"
 msgstr "Tampilan Ribbon"
 
-msgid "Bar (Lurus)"
-msgstr "Bar (Lurus)"
+#. module: ld_env_ribbon_pro
+msgid "Position"
+msgstr "Posisi"
 
-msgid "Corner (Sudut Diagonal)"
-msgstr "Corner (Sudut Diagonal)"
-
-msgid "Vertical (Menyamping)"
-msgstr "Vertical (Menyamping)"
-
-msgid "Banner (Full Width)"
-msgstr "Banner (Lebar Penuh)"
-
-msgid "Ribbon Position"
-msgstr "Posisi Ribbon"
-
-msgid "Top Right"
-msgstr "Kanan Atas"
-
-msgid "Top Left"
-msgstr "Kiri Atas"
-
-msgid "Bottom Right"
-msgstr "Kanan Bawah"
-
-msgid "Bottom Left"
-msgstr "Kiri Bawah"
-
+#. module: ld_env_ribbon_pro
 msgid "Color Mode"
 msgstr "Mode Warna"
 
-msgid "Allow Dismiss"
-msgstr "Izinkan Disembunyikan"
-
-msgid "Audit Production Access"
-msgstr "Audit Akses Produksi"
-
-msgid "ODOO_ENV Variable"
-msgstr "Variabel ODOO_ENV"
-
-#. view: help texts
-msgid "Show a visual environment indicator on all backend pages."
-msgstr "Tampilkan indikator visual environment di semua halaman backend."
-
-msgid "Detected value of the ODOO_ENV environment variable. When set, it overrides manual configuration."
-msgstr "Nilai variabel ODOO_ENV yang terdeteksi. Jika diset, akan menggantikan konfigurasi manual."
-
-msgid "Ribbon color and text will automatically adjust based on the selected environment."
-msgstr "Warna dan teks ribbon akan menyesuaikan otomatis sesuai environment yang dipilih."
-
-msgid "Custom ribbon text. Leave empty to use the default environment label."
-msgstr "Teks ribbon kustom. Kosongkan untuk menggunakan label default environment."
-
-msgid "Position of the ribbon on screen."
-msgstr "Posisi ribbon di layar."
-
-msgid "Users can hide the ribbon for the day. Automatically disabled for Production environments."
-msgstr "User dapat menyembunyikan ribbon untuk hari ini. Otomatis dinonaktifkan untuk environment Production."
-
-msgid "Log every session that accesses the Production environment."
-msgstr "Catat setiap sesi yang mengakses environment Production."
-
-#. selection values
-msgid "Development"
-msgstr "Development"
-
-msgid "Staging"
-msgstr "Staging"
-
-msgid "Production"
-msgstr "Produksi"
-
-msgid "Demo"
-msgstr "Demo"
-
-msgid "Test"
-msgstr "Test"
-
-msgid "Custom"
-msgstr "Kustom"
-
-msgid "Top Right"
-msgstr "Kanan Atas"
-
-msgid "Top Left"
-msgstr "Kiri Atas"
-
-msgid "Bottom Right"
-msgstr "Kanan Bawah"
-
-msgid "Diagonal"
-msgstr "Diagonal"
-
-msgid "Use Preset Color"
-msgstr "Gunakan Warna Preset"
-
+#. module: ld_env_ribbon_pro
 msgid "Custom Color (Hex)"
 msgstr "Warna Kustom (Hex)"
 
-#. model fields
+#. module: ld_env_ribbon_pro
 msgid "Allow users to dismiss ribbon"
 msgstr "Izinkan user menyembunyikan ribbon"
 
+#. module: ld_env_ribbon_pro
+msgid "Audit Production Access"
+msgstr "Audit Akses Produksi"
+
+#. module: ld_env_ribbon_pro
+msgid "ODOO_ENV Variable"
+msgstr "Variabel ODOO_ENV"
+
+#. module: ld_env_ribbon_pro
+#. model: ld_env_ribbon.audit_log
 msgid "Production Access Log"
 msgstr "Log Akses Produksi"
 
+#. module: ld_env_ribbon_pro
 msgid "Environment Ribbon Production Access Log"
 msgstr "Log Akses Produksi Environment Ribbon"
 
+#. module: ld_env_ribbon_pro
 msgid "User"
 msgstr "Pengguna"
 
+#. module: ld_env_ribbon_pro
 msgid "Access Time"
 msgstr "Waktu Akses"
 
+#. module: ld_env_ribbon_pro
 msgid "IP Address"
 msgstr "Alamat IP"
 
+#. module: ld_env_ribbon_pro
 msgid "User Agent"
 msgstr "User Agent"
 
+#. module: ld_env_ribbon_pro
 msgid "Action"
 msgstr "Aksi"
 
-msgid "Login"
-msgstr "Login"
+#. module: ld_env_ribbon_pro
+#. view strings
+msgid "Show a visual environment indicator on all backend pages."
+msgstr "Tampilkan indikator visual environment di semua halaman backend."
 
-msgid "Session Start"
-msgstr "Mulai Sesi"
+#. module: ld_env_ribbon_pro
+msgid "Detected value of the ODOO_ENV environment variable. When set, it overrides manual configuration."
+msgstr "Nilai variabel ODOO_ENV yang terdeteksi. Jika diset, akan menggantikan konfigurasi manual."
 
+#. module: ld_env_ribbon_pro
+msgid "Ribbon color and text will automatically adjust based on the selected environment."
+msgstr "Warna dan teks ribbon akan menyesuaikan otomatis sesuai environment yang dipilih."
+
+#. module: ld_env_ribbon_pro
+msgid "Custom ribbon text. Leave empty to use the default environment label."
+msgstr "Teks ribbon kustom. Kosongkan untuk menggunakan label default environment."
+
+#. module: ld_env_ribbon_pro
+msgid "Position of the ribbon on screen."
+msgstr "Posisi ribbon di layar."
+
+#. module: ld_env_ribbon_pro
+msgid "Users can hide the ribbon for the day. Automatically disabled for Production environments."
+msgstr "User dapat menyembunyikan ribbon untuk hari ini. Otomatis dinonaktifkan untuk environment Production."
+
+#. module: ld_env_ribbon_pro
+msgid "Log every session that accesses the Production environment."
+msgstr "Catat setiap sesi yang mengakses environment Production."
+
+#. module: ld_env_ribbon_pro
 msgid "Dismiss for today"
 msgstr "Sembunyikan hari ini"
 
+#. module: ld_env_ribbon_pro
 msgid "View Access Log"
 msgstr "Lihat Log Akses"
+
+#. module: ld_env_ribbon_pro
+#. selection: ribbon_environment
+msgid "Development"
+msgstr "Development"
+
+#. module: ld_env_ribbon_pro
+msgid "Staging"
+msgstr "Staging"
+
+#. module: ld_env_ribbon_pro
+msgid "UAT"
+msgstr "UAT"
+
+#. module: ld_env_ribbon_pro
+msgid "Production"
+msgstr "Produksi"
+
+#. module: ld_env_ribbon_pro
+msgid "Demo"
+msgstr "Demo"
+
+#. module: ld_env_ribbon_pro
+msgid "Test"
+msgstr "Test"
+
+#. module: ld_env_ribbon_pro
+msgid "Custom"
+msgstr "Kustom"
+
+#. module: ld_env_ribbon_pro
+#. selection: ribbon_style
+msgid "Bar (Straight)"
+msgstr "Bar (Lurus)"
+
+#. module: ld_env_ribbon_pro
+msgid "Corner (Diagonal)"
+msgstr "Corner (Sudut Diagonal)"
+
+#. module: ld_env_ribbon_pro
+msgid "Vertical (Sideways)"
+msgstr "Vertical (Menyamping)"
+
+#. module: ld_env_ribbon_pro
+msgid "Banner (Full Width)"
+msgstr "Banner (Lebar Penuh)"
+
+#. module: ld_env_ribbon_pro
+#. selection: ribbon_position
+msgid "Top Right"
+msgstr "Kanan Atas"
+
+#. module: ld_env_ribbon_pro
+msgid "Top Left"
+msgstr "Kiri Atas"
+
+#. module: ld_env_ribbon_pro
+msgid "Bottom Right"
+msgstr "Kanan Bawah"
+
+#. module: ld_env_ribbon_pro
+msgid "Bottom Left"
+msgstr "Kiri Bawah"
+
+#. module: ld_env_ribbon_pro
+#. selection: ribbon_color_mode
+msgid "Use Preset Color"
+msgstr "Gunakan Warna Preset"
+
+#. module: ld_env_ribbon_pro
+#. action
+msgid "Login"
+msgstr "Login"
+
+#. module: ld_env_ribbon_pro
+msgid "Session Start"
+msgstr "Mulai Sesi"
