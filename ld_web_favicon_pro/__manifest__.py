@@ -13,7 +13,7 @@
         - Cache invalidation via timestamp query param
     ''',
     'author': 'Mochammad Lutfi',
-    'website': '',
+    'website': 'https://lutfi.dev',
     'category': 'Website/Configuration',
     'license': 'LGPL-3',
     'depends': ['base', 'web'],

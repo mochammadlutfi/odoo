@@ -89,22 +89,6 @@ msgid "Pillow not installed"
 msgstr "Pillow belum terinstall"
 
 #. module: ld_web_favicon_pro
-msgid "Favicon Generated"
-msgstr "Favicon Berhasil Dibuat"
-
-#. module: ld_web_favicon_pro
-msgid "Favicon successfully generated from company logo."
-msgstr "Favicon berhasil di-generate dari logo perusahaan."
-
-#. module: ld_web_favicon_pro
-msgid "Favicon Cleared"
-msgstr "Favicon Dihapus"
-
-#. module: ld_web_favicon_pro
-msgid "Favicon cache cleared. Browser will reload the new favicon."
-msgstr "Cache favicon dihapus. Browser akan memuat favicon baru."
-
-#. module: ld_web_favicon_pro
 #. selection: favicon_environment_badge
 msgid "None"
 msgstr "Tidak Ada"

@@ -1,5 +1,3 @@
-import time
-
 from odoo import models
 from odoo.http import request
 
@@ -11,6 +9,5 @@ class IrHttp(models.AbstractModel):
         ctx = super().webclient_rendering_context()
         company = request.env.company
         if company.favicon:
-            ts = int(time.time() // 3600)
-            ctx['x_icon'] = f'/ld_favicon/favicon.ico?v={ts}'
+            ctx['x_icon'] = f'/ld_favicon/favicon.ico?v={company.favicon_version}'
         return ctx

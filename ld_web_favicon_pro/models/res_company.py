@@ -152,16 +152,7 @@ class ResCompany(models.Model):
 
     def action_generate_favicon(self):
         self.generate_favicon_from_logo()
-        return {
-            'type': 'ir.actions.client',
-            'tag': 'display_notification',
-            'params': {
-                'title': _('Favicon Generated'),
-                'message': _('Favicon successfully generated from company logo.'),
-                'type': 'success',
-                'sticky': False,
-            }
-        }
+        return {'type': 'ir.actions.client', 'tag': 'reload'}
 
     def action_clear_favicon(self):
         self.write({
@@ -170,16 +161,7 @@ class ResCompany(models.Model):
             'android_icon_192': False,
             'android_icon_512': False,
         })
-        return {
-            'type': 'ir.actions.client',
-            'tag': 'display_notification',
-            'params': {
-                'title': _('Favicon Cleared'),
-                'message': _('Favicon cache cleared. Browser will reload the new favicon.'),
-                'type': 'info',
-                'sticky': False,
-            }
-        }
+        return {'type': 'ir.actions.client', 'tag': 'reload'}
 
     @api.onchange('logo')
     def _onchange_logo_generate_favicon(self):
@@ -188,3 +170,11 @@ class ResCompany(models.Model):
                 self.generate_favicon_from_logo()
             except Exception as e:
                 _logger.warning('Auto-generate favicon failed: %s', e)
+
+    @api.onchange('favicon_environment_badge')
+    def _onchange_badge_regenerate_favicon(self):
+        if self.logo and self.favicon_auto_generated:
+            try:
+                self.generate_favicon_from_logo()
+            except Exception as e:
+                _logger.warning('Auto-regenerate favicon on badge change failed: %s', e)
